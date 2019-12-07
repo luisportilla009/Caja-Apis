@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <TextView
+            android:id="@+id/act0_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:gravity="center_horizontal"
+            android:text="@string/act0_title"
+            android:textSize="24sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="@drawable/ic_wifi_black_24dp"
+                android:contentDescription="@string/act0_flower" />
+
+            <TextView
+                android:id="@+id/act0_descwifi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:text="@string/act0_descWifi"
+                android:textSize="24sp" />
+        </TableRow>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="@drawable/ic_rose"
+                android:contentDescription="@string/act0_flower"
+                android:onClick="flower" />
+
+            <TextView
+                android:id="@+id/act0_descFlower"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:text="@string/act0_descFlower"
+                android:textSize="24sp" />
+        </TableRow>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="@drawable/ic_rose"
+                android:contentDescription="@string/act0_flower" />
+
+            <TextView
+                android:id="@+id/act0_descbrasil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:text="@string/act0_descQuestion"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TextView
+            android:id="@+id/act0_about"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="@string/act0_about"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
