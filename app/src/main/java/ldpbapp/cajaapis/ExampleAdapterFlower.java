@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +19,16 @@ public class ExampleAdapterFlower extends RecyclerView.Adapter<ExampleAdapterFlo
 
     private Context mContext;
     private ArrayList<ExampleItemFlower> mExampleList;
+    private OnItemClickListener mListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+
+    }
 
     public ExampleAdapterFlower(Context context, ArrayList<ExampleItemFlower> exampleList){
         mContext =context;
@@ -61,6 +72,18 @@ public class ExampleAdapterFlower extends RecyclerView.Adapter<ExampleAdapterFlo
             mImageView = itemView.findViewById(R.id.image_view_flower);
             mTextViewCreator = itemView.findViewById(R.id.text_view_creator_flower);
             mTextViewLikes = itemView.findViewById(R.id.text_view_likes_flower);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }

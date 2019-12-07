@@ -15,7 +15,7 @@
         <ImageView
             android:id="@+id/image_view_flower"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:src="@mipmap/ic_launcher"/>
 
         <TextView

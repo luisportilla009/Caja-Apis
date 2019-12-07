@@ -25,4 +25,9 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, WifiActivity.class );
         startActivity(i);
     }
+
+    public void retrofit(View view) {
+        Intent i = new Intent(this, RetrofitActivity.class );
+        startActivity(i);
+    }
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.android.volley.Request;
@@ -20,7 +21,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class FlowerActivity extends AppCompatActivity {
+public class FlowerActivity extends AppCompatActivity implements ExampleAdapterFlower.OnItemClickListener{
+
+    public static final String EXTRA_URL = "imageUrl";
+    public static final String EXTRA_CREATOR = "creatorName";
+    public static final String EXTRA_LIKES = "likeCount";
 
     private RecyclerView mRecyclerView;
     private ExampleAdapterFlower mExampleAdapterFlower;
@@ -44,7 +49,7 @@ public class FlowerActivity extends AppCompatActivity {
 
     private void parseJSON() {
         Random rand = new Random();
-        int n = rand.nextInt(8);
+        int n = rand.nextInt(10);
         String color = "";
         if (n == 0) color="tulip";
         if (n == 1) color="rose";
@@ -54,6 +59,8 @@ public class FlowerActivity extends AppCompatActivity {
         if (n == 5) color="geranium";
         if (n == 6) color="orchid";
         if (n == 7) color="snowdrop";
+        if (n == 8) color="mini+flower";
+        if (n == 9) color="purple+flower";
         String url = "https://pixabay.com/api/?key=14540949-d2a1852cc523bcda750011057&q="+color+"+&image_type=photo&pretty=true";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
@@ -75,6 +82,7 @@ public class FlowerActivity extends AppCompatActivity {
 
                             mExampleAdapterFlower = new ExampleAdapterFlower(FlowerActivity.this, mExampleList);
                             mRecyclerView.setAdapter(mExampleAdapterFlower);
+                            mExampleAdapterFlower.setOnItemClickListener(FlowerActivity.this);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -88,5 +96,15 @@ public class FlowerActivity extends AppCompatActivity {
         });
 
         mRequestQueue.add(request);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent detailIntent = new Intent(this,DetailFlowerActivity.class);
+        ExampleItemFlower clickedItem = mExampleList.get(position);
+        detailIntent.putExtra(EXTRA_URL, clickedItem.getImageUrl());
+        detailIntent.putExtra(EXTRA_CREATOR, clickedItem.getCreator());
+        detailIntent.putExtra(EXTRA_LIKES, clickedItem.getLikeCount());
+        startActivity(detailIntent);
     }
 }

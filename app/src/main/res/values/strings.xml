@@ -3,7 +3,7 @@
     <string name="act0_title">Caja APIs</string>
     <string name="act0_about">Creado por: Luis David Portilla Barco</string>
     <string name="act0_flower">a flower</string>
-    <string name="act0_descFlower">Imagenes de flores</string>
+    <string name="act0_descFlower">Imagenes de Flores</string>
     <string name="act0_descWifi">Zonas Wifi de Pasto</string>
-    <string name="act0_descQuestion">¿Qué habrá aqui?</string>
+    <string name="act0_descQuestion">Aplicación con Retrofit</string>
 </resources>
