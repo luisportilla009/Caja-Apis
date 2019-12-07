@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@android:color/darker_gray"
+    >
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -24,7 +26,8 @@
             android:fontFamily="casual"
             android:gravity="center_horizontal"
             android:text="@string/act0_title"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:textColor="@android:color/black"/>
 
         <Space
             android:layout_width="match_parent"
@@ -39,7 +42,8 @@
                 android:layout_width="128dp"
                 android:layout_height="128dp"
                 android:background="@drawable/ic_wifi_black_24dp"
-                android:contentDescription="@string/act0_flower" />
+                android:contentDescription="@string/act0_flower"
+                android:onClick="wifi" />
 
             <TextView
                 android:id="@+id/act0_descwifi"
@@ -47,12 +51,15 @@
                 android:layout_height="match_parent"
                 android:fontFamily="casual"
                 android:gravity="center"
+                android:onClick="wifi"
                 android:text="@string/act0_descWifi"
+                android:textColor="@android:color/black"
                 android:textSize="24sp" />
         </TableRow>
         <Space
             android:layout_width="match_parent"
-            android:layout_height="8dp" />
+            android:layout_height="8dp"
+            />
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -71,12 +78,15 @@
                 android:layout_height="match_parent"
                 android:fontFamily="casual"
                 android:gravity="center"
+                android:onClick="flower"
                 android:text="@string/act0_descFlower"
+                android:textColor="@android:color/black"
                 android:textSize="24sp" />
         </TableRow>
         <Space
             android:layout_width="match_parent"
-            android:layout_height="8dp" />
+            android:layout_height="8dp"
+            />
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
@@ -94,7 +104,8 @@
                 android:fontFamily="casual"
                 android:gravity="center"
                 android:text="@string/act0_descQuestion"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textColor="@android:color/black"/>
         </TableRow>
 
         <TextView
@@ -107,7 +118,8 @@
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@android:color/black"/>
 
     </LinearLayout>
 

@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView clickFlower;
+    //private TextView clickFlower;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void flower(View view) {
         Intent i = new Intent(this, FlowerActivity.class );
+        startActivity(i);
+    }
+
+    public void wifi(View view) {
+        Intent i = new Intent(this, WifiActivity.class );
         startActivity(i);
     }
 }

@@ -18,6 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class FlowerActivity extends AppCompatActivity {
 
@@ -42,7 +43,18 @@ public class FlowerActivity extends AppCompatActivity {
     }
 
     private void parseJSON() {
-        String url = "https://pixabay.com/api/?key=14540949-d2a1852cc523bcda750011057&q=purple+flowers&image_type=photo&pretty=true";
+        Random rand = new Random();
+        int n = rand.nextInt(8);
+        String color = "";
+        if (n == 0) color="tulip";
+        if (n == 1) color="rose";
+        if (n == 2) color="bluebell";
+        if (n == 3) color="sunflower";
+        if (n == 4) color="lotus";
+        if (n == 5) color="geranium";
+        if (n == 6) color="orchid";
+        if (n == 7) color="snowdrop";
+        String url = "https://pixabay.com/api/?key=14540949-d2a1852cc523bcda750011057&q="+color+"+&image_type=photo&pretty=true";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {

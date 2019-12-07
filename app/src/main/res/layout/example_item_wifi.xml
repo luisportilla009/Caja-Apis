@@ -12,27 +12,21 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/image_view_flower"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@mipmap/ic_launcher"/>
-
         <TextView
-            android:id="@+id/text_view_creator_flower"
+            android:id="@+id/text_view_direccion_wifi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Creator Name"
+            android:text="Dirección: "
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:fontFamily="casual"
             />
 
         <TextView
-            android:id="@+id/text_view_likes_flower"
+            android:id="@+id/text_view_punto_wifi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Like: "
+            android:text="Punto Wifi: "
             android:fontFamily="casual"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
