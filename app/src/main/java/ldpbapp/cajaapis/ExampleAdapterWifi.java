@@ -12,12 +12,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class ExampleAdapterWifi extends RecyclerView.Adapter<ExampleAdapterWifi.ExampleViewHolder> {
 
     private Context mContext;
     private ArrayList<ExampleItemWifi> mExampleList;
+    private OnItemClickListener mListener;
+
+    public interface  OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        mListener = listener;
+
+    }
 
     public ExampleAdapterWifi(Context context, ArrayList<ExampleItemWifi> exampleList){
         mContext =context;
@@ -38,6 +50,8 @@ public class ExampleAdapterWifi extends RecyclerView.Adapter<ExampleAdapterWifi.
 
         String direcciones = currentItem.getDireccion();
         String puntos = currentItem.getPunto();
+        //JSONObject coordenadas = currentItem.getCoordenadas();
+
 
         holder.mTextViewDireccion.setText("Dirección: " + direcciones);
         holder.mTextViewPunto.setText("Punto Wifi: " + puntos);
@@ -62,6 +76,19 @@ public class ExampleAdapterWifi extends RecyclerView.Adapter<ExampleAdapterWifi.
 
             mTextViewDireccion = itemView.findViewById(R.id.text_view_direccion_wifi);
             mTextViewPunto = itemView.findViewById(R.id.text_view_punto_wifi);
+
+            itemView.setOnClickListener((new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null){
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION){
+                            mListener.onItemClick(position);
+                        }
+
+                    }
+                }
+            }));
         }
     }
 }
